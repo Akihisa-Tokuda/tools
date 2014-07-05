@@ -8,7 +8,7 @@ public class ForBunTest1 {
 	public static void main (String args[]){
 		List<Integer> list = Arrays.asList(1,2,3,4,6,7,8,9,10,20);
 		
-		//‚±‚ê‚Ü‚Å
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½
 		for(int i:list){
 			System.out.println(i);
 		}
@@ -22,21 +22,21 @@ public class ForBunTest1 {
 		
 		list.forEach(x -> System.out.println(x));
 
-		//filterˆ—
-		//5ˆÈ‰º‚ðo—Í‚³‚¹‚½‚¢
+		//filterï¿½ï¿½ï¿½ï¿½
+		//5ï¿½È‰ï¿½ï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		list.stream().filter(x -> x<5).forEach(x -> System.out.println(x));
 		
-		//Å‘å’l
+		//ï¿½Å‘ï¿½ï¿½l
 		System.out.println(
 				list.stream().map(x -> x).reduce(0, (x, y)->x > y ? x : y)
 		);
-		//maxƒƒ\ƒbƒh—˜—p
+		//maxï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½p
 		System.out.println(
 				list.stream().max((x,y) -> x - y).get()
 		);
 		
 		IntStream.range(0,10).parallel().forEach(x -> {
-			System.out.println(Integer.toString(x) +':'+ Integer.toString(x*x));
+			System.out.println(Integer.toString(x) +':'+ Integer.toString(x+x));
 		});
 		
 	}
